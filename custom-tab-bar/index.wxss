@@ -1,0 +1,3 @@
+/* custom-tab-bar/index.wxss */
+
+/* WeUI 组件库里，每个组件设置了 addGlobalClass: true。表示页面的 wxss 样式将影响到组件，但组件 wxss 将不影响到页面。注意是页面。所以只有在 pages 的 wxss 或 app.wxss 声明的样式才能覆盖组件的样式。此处 custom-tab-bar 还属于组件，所以无法影响。*/

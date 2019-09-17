@@ -1,0 +1,16 @@
+@import './weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+/**app.wxss**/
+.column-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+/** component - custom-tab-bar **/
+.custom-tab-bar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+  color: #fdca74;
+}

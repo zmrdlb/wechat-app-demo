@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-cell": "/weui-miniprogram/cell/cell",
+    "mp-cells": "/weui-miniprogram/cells/cells",
+    "mp-checkbox-group": "/weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-checkbox": "/weui-miniprogram/checkbox/checkbox",
+    "mp-form": "/weui-miniprogram/form/form"
+  }
+}

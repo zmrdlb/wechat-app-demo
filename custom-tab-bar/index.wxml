@@ -1,0 +1,2 @@
+<!--custom-tab-bar/index.wxml-->
+<mp-tabbar ext-class="custom-tab-bar" list="{{list}}" current="{{selected}}" bindchange="tabChange"></mp-tabbar>
