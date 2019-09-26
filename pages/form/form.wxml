@@ -1,5 +1,6 @@
 <!--pages/form/form.wxml-->
 <view>
+  <text>页面参数 owner：{{owner}}</text>
   <mp-form id="form" rules="{{rules}}" models="{{formData}}">
     <mp-cells title="单选列表项">
       <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">

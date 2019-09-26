@@ -4,16 +4,24 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"coverView": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.2",
+	"libVersion": "2.8.3",
 	"appid": "wx8fa4a9f8de60e09d",
 	"projectname": "wechat-app-demo",
 	"debugOptions": {
@@ -31,13 +39,29 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"scene": 1044,
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "hcI14y7QAZ8BbamKsGYH4UlWU_JeWI7YFgLyySgaIDo@cr4dev",
+						"shareKey": "FF5dQbvrRNg7bGqmCFlDUIBtQpC9HScenInfoKSGeqgz-z7p43PoucpSjI1YDH69jteYKjs7W4jzeEHX8rgiWA~~"
+					}
+				}
+			]
 		}
 	}
 }

@@ -1,5 +1,5 @@
 // pages/form/form.js
-const FormValidator = require('../../utils/validation/weui-form-validator.js')
+const FormValidator = require('../../app-utils/validation/weui-form-validator.js')
 
 Page({
 
@@ -42,19 +42,23 @@ Page({
     }, {
       name: 'idcard',
       rules: { required: true, message: 'idcard必填' },
-    }]
+    }],
+
+    // 页面参数
+    owner: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
     //初始化 this.data.formData
     var radio = this.data.radioItems.find(item => item.checked).value;
     var checkbox = this.data.checkboxItems.filter(item => item.checked).map(item => item.value);
     this.setData({
       'formData.radio': radio,
-      'formData.checkbox': checkbox
+      'formData.checkbox': checkbox,
+      'owner': query.owner
     })
   },
 
