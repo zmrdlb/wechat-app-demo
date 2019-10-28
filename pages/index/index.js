@@ -1,110 +1,79 @@
 //index.js
 //获取应用实例
 const app = getApp(),
-      ApiFetch = require('../../app-utils/network/api-fetch.js');
+      ApiFetch = require('../../app-utils/network/api-fetch.js'),
+      UserinfoBehavior = require('../../behavior/userinfo.js');
 
-Page({
+Component({
+  behaviors: [UserinfoBehavior],
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    motto: 'Hello World'
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+  methods: {
+    //事件处理函数
+    bindViewTap: function () {
+      wx.navigateTo({
+        url: '../logs/logs'
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+    },
+    onLoad: function () {
+      console.log('onLoad index');
+
+      //使用带 shareTicket 的转发
+      wx.showShareMenu({
+        withShareTicket: true
       })
-    }
+    },
+    onShow() {
+      //使用custom-tab-bar的示例
+      // if (typeof this.getTabBar === 'function' &&
+      //   this.getTabBar()) {
+      //   this.getTabBar().setData({
+      //     selected: 0
+      //   })
+      // }
 
-    //使用带 shareTicket 的转发
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-  },
-  onShow(){
-    //使用custom-tab-bar的示例
-    // if (typeof this.getTabBar === 'function' &&
-    //   this.getTabBar()) {
-    //   this.getTabBar().setData({
-    //     selected: 0
-    //   })
-    // }
+      //使用系统tab-bar的示例
+      //只是显示红点
+      //wx.showTabBarRedDot({index: 0});
+      //显示红点并在里面添加文字
+      wx.setTabBarBadge({
+        index: 0,
+        text: '11'
+      })
+    },
+    onHide() {
+      //使用系统tab-bar的示例
+      wx.hideTabBarRedDot({ index: 0 });
+    },
+    onReady() {
+      //测试封装的fetch
+      // ApiFetch.fetch({
+      //   url: '/usr/api'
+      // });
 
-    //使用系统tab-bar的示例
-    //只是显示红点
-    //wx.showTabBarRedDot({index: 0});
-    //显示红点并在里面添加文字
-    wx.setTabBarBadge({
-      index: 0,
-      text: '11'
-    })
-  },
-  onHide(){
-    //使用系统tab-bar的示例
-    wx.hideTabBarRedDot({ index: 0 });
-  },
-  onReady(){
-    //测试封装的fetch
-    // ApiFetch.fetch({
-    //   url: '/usr/api'
-    // });
-
+      /**
+       * 打印当前平台信息 platform
+       * 微信开发者工具：devtools
+       * 苹果手机：ios
+       */
+      // wx.showModal({
+      //   title: '客户端平台',
+      //   content: wx.getSystemInfoSync().platform
+      // })
+    },
     /**
-     * 打印当前平台信息 platform
-     * 微信开发者工具：devtools
-     * 苹果手机：ios
+     * 用户点击右上角分享
      */
-    // wx.showModal({
-    //   title: '客户端平台',
-    //   content: wx.getSystemInfoSync().platform
-    // })
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function (obj) {
-    return {
-      title: 'arrow 首页',
-      path: '/pages/index/index',
-      imageUrl: 'http://static6.arrow.com/aropdfconversion/arrowimages/251dd22533b9d635cab380d2dc4f83c680afd230/RASPBERRYPI4-4GBMainimage.jpg'
+    onShareAppMessage: function (obj) {
+      return {
+        title: 'arrow 首页',
+        path: '/pages/index/index',
+        imageUrl: 'http://static6.arrow.com/aropdfconversion/arrowimages/251dd22533b9d635cab380d2dc4f83c680afd230/RASPBERRYPI4-4GBMainimage.jpg'
+      }
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   }
+  
 })
 
 /**

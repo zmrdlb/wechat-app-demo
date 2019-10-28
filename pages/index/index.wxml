@@ -10,5 +10,6 @@
   <view class="usermotto">
     <navigator url="/pages/form/form?owner=zmrdlb">跳转到form页面</navigator>
     <button open-type="share"> 转发当前页面 </button>
+    <button open-type="openSetting">打开设置</button>
   </view>
 </view>
