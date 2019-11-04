@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<view class="product-list">
+  <view class="product-item" wx:for="{{list}}" wx:key="id">
+    <image class="image" mode="aspectFit" src="{{item.image}}"></image>
+    <navigator class="title" hover-class="link-hover" url="{{item.url}}">{{item.name}}</navigator>
+    <view class="desc">{{item.description}}</view>
+  </view>
+</view>
+<list-loadstate id="loadstate" list="{{list}}" bindfetchmore="onFetchMore" bindrefresh="onRefreshList"></list-loadstate>

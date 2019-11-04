@@ -1,0 +1,39 @@
+@import "app-css/tool/line.less";
+
+.product-list {
+  padding: 20rpx;
+  padding-bottom: 4rpx;
+  background: #f2f6f9;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-item {
+  width: 49%;
+  padding: 12rpx 16rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 16rpx;
+  color: #666;
+
+  &:nth-child(odd){
+      margin-right: 1%;
+  }
+
+  &:nth-child(even) {
+    margin-left: 1%;
+  }
+
+  .image {
+    width: 100%;
+    height: 200rpx;
+  }
+
+  .title {
+    color: #333;
+  }
+
+  .title, .desc {
+      .lib-tool-single-ellipsis();
+  }
+}

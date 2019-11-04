@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "查看启动日志",
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance": 200,
-  "usingComponents": {}
-}

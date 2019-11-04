@@ -10,12 +10,6 @@ Component({
     motto: 'Hello World'
   },
   methods: {
-    //事件处理函数
-    bindViewTap: function () {
-      wx.navigateTo({
-        url: '../logs/logs'
-      })
-    },
     onLoad: function () {
       console.log('onLoad index');
 

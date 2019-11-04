@@ -1,0 +1,28 @@
+<!--components/list-loadstate.wxml-->
+<view>
+    <block wx:if="{{list.length > 0}}">
+    	<block wx:if="{{loading}}">
+    		<block wx:if="{{!pulldown}}">
+                <view>loading...</view>
+    		</block>
+    	</block>
+    	<block wx:else>
+    		<view hidden="{{!showError}}" bindtap="onFetchMore">出错了，点击重试</view>
+            <block wx:if="{{!showError}}">
+                <view hidden="{{more}}">已经到底了</view>
+                <view hidden="{{!more}}" bindtap="onFetchMore">点击加载更多</view>
+            </block>
+    	</block>
+    </block>
+    <block wx:else>
+    	<block wx:if="{{loading}}">
+    		<block wx:if="{{!pulldown}}">
+    			<view>全屏loading...</view>
+    		</block>
+    	</block>
+    	<block wx:else>
+    		<view hidden="{{showError}}">这里空空如也~</view>
+    		<view hidden="{{!showError}}" bindtap="onRefreshList">出错了，点击刷新</view>
+    	</block>
+    </block>
+</view>

@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/list/list",
     "pages/form/form"
   ],
   "window": {
@@ -24,10 +24,10 @@
         "selectedIconPath": "images/home-selected-tabbar.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "Logs",
-        "iconPath": "images/log-tabbar.png",
-        "selectedIconPath": "images/log-selected-tabbar.png"
+        "pagePath": "pages/list/list",
+        "text": "List",
+        "iconPath": "images/list-tabbar.png",
+        "selectedIconPath": "images/list-selected-tabbar.png"
       }
     ]
   },
