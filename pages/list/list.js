@@ -15,7 +15,6 @@ Page({
     // }
   },
   onLoad: function () {
-      this.fetchCount = 0;
       this.compLoadstate = this.selectComponent('#loadstate');
       this.fetchListData(true);
   },
@@ -50,9 +49,9 @@ Page({
   fetchListData(refresh){
 
       // fetchCount 是为了用来模拟加载几屏数据
-    //   if (refresh) {
-    //       this.fetchCount = 0;
-    //   }
+      if (refresh) {
+          this.fetchCount = 0;
+      }
 
       this.compLoadstate.fetchListData(refresh,(successHandle,failHandle,finallyHandle) => {
           // 开发者工具下自动回弹，真机需代码回弹。个人喜欢用代码控制回弹

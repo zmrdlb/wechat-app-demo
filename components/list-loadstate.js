@@ -121,7 +121,7 @@ Component({
         },
 
         // 刷新列表
-        onFefreshList(){
+        onRefreshList(){
             this.triggerEvent('refresh')
         },
 
