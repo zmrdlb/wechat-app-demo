@@ -105,5 +105,14 @@ Page({
     // 刷新列表
     onRefreshList(){
         this.fetchListData(true)
+    },
+
+    // 跳转外部链接
+    // 参考文章：http://www.ctoutiao.com/891889.html
+    // https://blog.csdn.net/xinzi11243094/article/details/80943607
+    onGoOut(e){
+        wx.navigateTo({
+            url: '/pages/out/out?url=' + encodeURI(e.currentTarget.dataset.url)
+        })
     }
 })

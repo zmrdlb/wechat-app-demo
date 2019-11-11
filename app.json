@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/list/list",
-    "pages/form/form"
+    "pages/form/form",
+    "pages/out/out"
   ],
   "window": {
     "backgroundTextStyle": "dark",
