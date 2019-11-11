@@ -3,6 +3,6 @@
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 60,
   "usingComponents": {
-      "list-loadstate": "/components/list-loadstate"
+      "list-loadstate": "/components/list-loadstate/list-loadstate"
   }
 }
