@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<view class="product-list">
+<view class="product-list" hidden="{{list.length == 0}}">
   <view class="product-item" wx:for="{{list}}" wx:key="id" data-url="{{item.url}}" bindtap="onGoOut">
     <image class="image" mode="aspectFit" src="{{item.image}}"></image>
     <view class="title">{{item.name}}</view>

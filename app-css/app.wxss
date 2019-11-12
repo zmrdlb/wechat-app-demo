@@ -1,0 +1,44 @@
+/**
+ * 小程序公共样式设置，最终被引入app.wxss
+ * @author zmrdlb
+ */
+/**
+ * 段落排版样式
+ * @author zmrdlb
+ */
+/**
+ * 全局css变量
+ * @author Linda Zhang
+ */
+/**
+ * 段落排版
+ */
+/**
+ * 链接
+ */
+/**
+  * 默认文字排版
+  */
+page {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+/**
+ * 导航 hover class
+ */
+.link-hover {
+  color: #2b7ae2;
+}
+/**
+ * 重写 WeUI 组件库里的样式。
+ *
+ * WeUI 组件库里，每个组件设置了 addGlobalClass: true。表示页面的 wxss 样式将影响到组件，但组件 wxss 将不影响到页面。
+ * 注意是页面。所以只有在 pages 的 wxss 或 app.wxss 声明的样式才能覆盖组件的样式。
+ * 此处 custom-tab-bar 还属于组件，所以无法影响。
+ * @author zmrdlb
+ */
+/** component - custom-tab-bar **/
+.custom-tab-bar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+  color: #fdca74;
+}

@@ -1,0 +1,84 @@
+/**
+ * 提示列表加载的各种状态显示
+ * @author zmrdlb
+ */
+
+@import "app-css/variables.less";
+
+/**
+ * 加载状态
+ * @type {[type]}
+ */
+.load-state {
+    font-size: 12px; //不希望在iphone5下被缩放的太小
+    color: @font-color-tip;
+    text-align: center;
+
+    /**
+     * 可点击按钮
+     */
+    .btn {
+        border: 1px solid @font-color-tip;
+        border-radius: 36rpx;
+        padding: 2px 4px;
+
+        /**
+         * 高亮样式
+         */
+        &.highlight {
+            color: @link-color-hover;
+            border-color: @link-color-hover;
+        }
+    }
+}
+
+/**
+ * 全屏状态
+ */
+.load-state.full {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /**
+     * 说明pulldown下拉样式已显示
+     * @type {[type]}
+     */
+    &.pulldown {
+
+    }
+
+    /**
+     * loading section
+     */
+    .loading {
+        .image {
+            display: block;
+            width: 64rpx;
+            height: 64rpx;
+            margin-bottom: 4px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    /**
+     * error section
+     */
+    .error {
+        padding: 20rpx; //增大点击区域
+    }
+}
+
+/**
+ * 列表尾部追加状态
+ */
+.load-state.append {
+    padding: 20rpx 10rpx;
+}

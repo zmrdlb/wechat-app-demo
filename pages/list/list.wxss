@@ -10,10 +10,16 @@
  *   @section 针对某些情况下，行高不生效。
  *   原理：决定行高的是行内最高的元素的值。
  */
+page {
+  height: 100%;
+  background: #f2f6f9;
+}
+/**
+ * 产品列表
+ */
 .product-list {
   padding: 20rpx;
   padding-bottom: 4rpx;
-  background: #f2f6f9;
   display: flex;
   flex-wrap: wrap;
 }

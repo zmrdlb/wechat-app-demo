@@ -1,28 +1,32 @@
 <!--components/list-loadstate.wxml-->
-<view>
+<view class="con-class">
     <block wx:if="{{list.length > 0}}">
-    	<block wx:if="{{loading}}">
-    		<block wx:if="{{!pulldown}}">
-                <view>loading...</view>
-    		</block>
-    	</block>
-    	<block wx:else>
-    		<view hidden="{{!showError}}" bindtap="onFetchMore">出错了，点击重试</view>
-            <block wx:if="{{!showError}}">
-                <view hidden="{{more}}">已经到底了</view>
-                <view hidden="{{!more}}" bindtap="onFetchMore">点击加载更多</view>
-            </block>
-    	</block>
+        <view class="load-state append">
+        	<block wx:if="{{loading}}">
+        		<block wx:if="{{!pulldown}}">
+                    <view>loading...</view>
+        		</block>
+        	</block>
+        	<block wx:else>
+        		<view hidden="{{!showError}}" bindtap="onFetchMore">出错了，<text class="btn highlight">点击重试</text></view>
+                <block wx:if="{{!showError}}">
+                    <view hidden="{{more}}">已经到底了</view>
+                    <view hidden="{{!more}}" bindtap="onFetchMore"><text class="btn">点击加载更多</text></view>
+                </block>
+        	</block>
+        </view>
     </block>
     <block wx:else>
-    	<block wx:if="{{loading}}">
-    		<block wx:if="{{!pulldown}}">
-    			<view>全屏loading...</view>
-    		</block>
-    	</block>
-    	<block wx:else>
-    		<view hidden="{{showError}}">这里空空如也~</view>
-    		<view hidden="{{!showError}}" bindtap="onRefreshList">出错了，点击刷新</view>
-    	</block>
+        <view class="load-state full">
+            <block wx:if="{{loading}}">
+                <block wx:if="{{pdFLoading || !pulldown}}">
+                    <view class="loading"><image class="image" mode="aspectFit" src="./loading-64*64.png"></image>加载中...</view>
+                </block>
+            </block>
+            <block wx:else>
+                <view hidden="{{showError}}" class="empty">这里空空如也~</view>
+                <view hidden="{{!showError}}" class="error" bindtap="onRefreshList">出错了，<text class="btn highlight">点击刷新</text></view>
+            </block>
+        </view>
     </block>
 </view>

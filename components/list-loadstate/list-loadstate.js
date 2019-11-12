@@ -6,8 +6,15 @@
 
 Component({
     options: {
+        addGlobalClass: true,
         pureDataPattern: /^pure/ // 指定所有 pure 开头的数据字段为纯数据字段
     },
+    /**
+     * 在page中指定的con-class下，直接定义css生效，但是选择后代选择器定义样式就不能生效。
+     * 故设置了addGlobalClass。
+     * @type {Array}
+     */
+    externalClasses: ['con-class'],
     /**
      * 组件的属性列表
      */
@@ -20,6 +27,14 @@ Component({
         pureRefreshFailText: {
             type: String,
             value: '刷新失败'
+        },
+        /**
+         * 默认情况下，如果页面开启了pulldown，则默认pulldown loading和全屏loading共存。
+         * 如果想当pulldown loading显示时关闭全屏loading的显示，则设置为false。
+         */
+        pdFLoading: {
+            type: Boolean,
+            value: true
         }
     },
 
@@ -31,6 +46,10 @@ Component({
     	showError: false, // 是否显示错误信息
     	pulldown: false, // 是否处于pulldown下拉刷新状态
     	more: false // 是否有更多数据
+    },
+
+    attached(){
+        console.log(this.data.pdFLoading);
     },
 
     /**

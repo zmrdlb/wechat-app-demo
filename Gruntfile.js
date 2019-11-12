@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-    var compileLessFiles = ['pages/**/*.less', 'components/**/*.less', 'app.less'];
+    var compileLessFiles = ['pages/**/*.less', 'components/**/*.less', 'app-css/app.less'];
 
   // Project configuration.
   grunt.initConfig({
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
   // 监听 less 并编译
   grunt.registerTask('dev', ['watch']);
-  // 编译 less  
+  // 编译 less
   grunt.registerTask('default', ['less']);
 
 };
