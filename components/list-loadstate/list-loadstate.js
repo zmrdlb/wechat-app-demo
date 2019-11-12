@@ -23,7 +23,7 @@ Component({
             type: Array,
             value: []
         },
-        // 当前列表不为空，此时pulldown下拉刷新，接口请求失败，给出toast提示弹层提示信息
+        // 当前列表不为空，此时pulldown下拉刷新，接口请求失败，给出toast弹层默认提示信息
         pureRefreshFailText: {
             type: String,
             value: '刷新失败'
@@ -87,12 +87,13 @@ Component({
 
         /**
          * 接口请求失败
-         * @return {[type]} [description]
+         * @param  {String} [errmsg] 错误信息提示
+         * @return {[type]}        [description]
          */
-        failHandle(){
+        failHandle(errmsg){
             if (this.data.pulldown && this.data.list.length > 0){
                 wx.showToast({
-                    title: this.data.pureRefreshFailText
+                    title: errmsg || this.data.pureRefreshFailText
                 })
             }else{
                 this.setData({

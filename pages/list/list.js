@@ -60,7 +60,7 @@ Page({
               if (this.fetchCount == 1 && !this.force) {
                   // 失败
                   this.force = true;
-                  failHandle();
+                  failHandle(); //此处可传递错误提示信息
               }else{
                   // 成功
 
