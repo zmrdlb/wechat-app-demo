@@ -48,10 +48,6 @@ Component({
     	more: false // 是否有更多数据
     },
 
-    attached(){
-        console.log(this.data.pdFLoading);
-    },
-
     /**
      * 组件的方法列表
      */

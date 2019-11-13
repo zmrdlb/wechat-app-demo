@@ -1,4 +1,8 @@
 /**
+ * less 各种小工具汇总。如果要使用 tool 文件夹下的任何 less 方法，则直接引用此文件
+ * @author zmrdlb
+ */
+/**
  *  文字换行折行等相关的方法
  *  @author Linda Zhang
  */
