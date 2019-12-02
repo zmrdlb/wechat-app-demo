@@ -45,7 +45,8 @@ Component({
         loading: false, // 是否正在请求数据
     	showError: false, // 是否显示错误信息
     	pulldown: false, // 是否处于pulldown下拉刷新状态
-    	more: false // 是否有更多数据
+    	more: false, // 是否有更多数据
+        isDelayElapsed: false // 从开始请求时，200ms 以后如果请求还未完成，才显示 loading 样式
     },
 
     /**
@@ -125,10 +126,17 @@ Component({
             console.log('fetch data');
             this.setData({
                 loading: true,
-                showError: false
+                showError: false,
+                isDelayElapsed: false
             })
 
             customFetch(this.successHandle.bind(this),this.failHandle.bind(this),this.finallyHandle.bind(this));
+
+            setTimeout(() => {
+                this.setData({
+                    isDelayElapsed: true
+                })
+            },200);
         },
 
         // 点击加载更多

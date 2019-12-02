@@ -3,7 +3,7 @@
     <block wx:if="{{list.length > 0}}">
         <view class="load-state append">
         	<block wx:if="{{loading}}">
-        		<block wx:if="{{!pulldown}}">
+        		<block wx:if="{{isDelayElapsed && !pulldown}}">
                     <view>loading...</view>
         		</block>
         	</block>
@@ -19,7 +19,7 @@
     <block wx:else>
         <view class="load-state full">
             <block wx:if="{{loading}}">
-                <block wx:if="{{pdFLoading || !pulldown}}">
+                <block wx:if="{{isDelayElapsed && (pdFLoading || !pulldown)}}">
                     <view class="loading"><image class="image" mode="aspectFit" src="./loading-64*64.png"></image>加载中...</view>
                 </block>
             </block>
