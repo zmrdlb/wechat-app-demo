@@ -12,6 +12,8 @@
 | 下拉刷新 pulldown | 系统默认pulldown loading及自定义的全屏loading| 1. 当前页面有数据，不清空页面，弹层提示错误信息；2. 当前页面数据为空，同”首屏error” | 清空当前页面，同“首屏empty” | 清空当前页面，渲染数据 |
 | 1. 滑动页面触底瀑布流加载下一屏；2. 点击列表末尾的“加载更多” | appending loading | appending error，可点击重新加载 | 没有更多数据提示 | 不清空当前页面，append 数据并渲染。如果接口告知还有更多数据，则显示点击加载更多| 
 
+> **Loading显示逻辑特别说明：** 不管是何种 loading，现规定，当接口请求超过 200ms 后才会显示 loading。一般，当接口请求很快，人眼感知不到这种快速的延迟，则无需显示 loading，以免造成不必要的页面渲染。这个思想参考自 [vue-promised](https://github.com/posva/vue-promised)。
+
 ### example
 
 请参见页面 pages/list/list
