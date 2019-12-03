@@ -63,7 +63,7 @@ Component({
          */
         checkMore(data){
             if(data.more != undefined){
-                return !!data.more && data.length > 0;
+                return !!data.more && data.list.length > 0;
             }
             return data.list.length > 0;
         },
