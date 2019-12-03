@@ -49,6 +49,12 @@ Component({
         isDelayElapsed: false // 从开始请求时，200ms 以后如果请求还未完成，才显示 loading 样式
     },
 
+    lifetimes: {
+        created(){
+            this.delayTimer = null;
+        }
+    },
+
     /**
      * 组件的方法列表
      */
@@ -105,6 +111,7 @@ Component({
          */
         finallyHandle(){
             this.stopPulldown();
+            this.delayTimer && clearTimeout(this.delayTimer);
             this.setData({
                 loading: false
             })
@@ -132,10 +139,11 @@ Component({
 
             customFetch(this.successHandle.bind(this),this.failHandle.bind(this),this.finallyHandle.bind(this));
 
-            setTimeout(() => {
+            this.delayTimer = setTimeout(() => {
                 this.setData({
                     isDelayElapsed: true
                 })
+                this.delayTimer = null;
             },200);
         },
 
