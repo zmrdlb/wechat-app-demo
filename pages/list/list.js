@@ -105,7 +105,7 @@ Component({
                     // finally
                     finallyHandle();
 
-                }, 500);
+                }, 2500);
             })
 
           },
