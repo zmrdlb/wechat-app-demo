@@ -1,4 +1,12 @@
 <!--index.wxml-->
+<swiper class="banner-con" indicator-dots="{{true}}" indicator-color="rgba(232,232,232,.4)" indicator-active-color="#ededed"
+autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}" bindchange="onBannerSwitch" bindtap="onBannerTap">
+    <block wx:for="{{bannerList}}" wx:key="*this">
+      <swiper-item>
+        <image class="banner-img" src="{{item.image}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+</swiper>
 <view class="column-container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

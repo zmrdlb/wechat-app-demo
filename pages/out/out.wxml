@@ -1,5 +1,5 @@
 <!--pages/out.wxml-->
-<web-view src="https://baidu.com"></web-view>
+<!--<web-view src="https://baidu.com"></web-view>-->
 
 <!-- 因为要跳转的www.arrow.cn已经绑定了公众号，所以该小程序需要公众号号授权。具体授权说明查看”调试微信网页授权“ https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html -->
-<!-- <web-view src="{{url}}"></web-view> -->
+<web-view src="{{url}}"></web-view>

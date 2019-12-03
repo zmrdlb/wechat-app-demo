@@ -33,7 +33,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // 监听 less 并编译
-  grunt.registerTask('dev', ['watch']);
+  grunt.registerTask('dev', ['less','watch']);
   // 编译 less
   grunt.registerTask('default', ['less']);
 
